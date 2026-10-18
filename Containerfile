@@ -3,7 +3,7 @@ COPY build_files /
 
 FROM ghcr.io/garrettptech/kitsunelinux-base:latest
 
-COPY system_files /
+#COPY system_files /
 
 #Runs Scripts
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
