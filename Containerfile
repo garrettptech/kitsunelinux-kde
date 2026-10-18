@@ -4,6 +4,8 @@ COPY build_files /
 FROM ghcr.io/garrettptech/kitsunelinux-base:latest
 
 #COPY system_files /
+RUN rm -rf /var/run && ln -s /run /var/run
+
 
 #Runs Scripts
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
