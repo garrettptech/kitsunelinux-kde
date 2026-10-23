@@ -2,8 +2,9 @@
 set -oue pipefail
 
 # Desktop Environment and Applications
-dnf copr enable -y imput/helium 
+dnf copr enable -y imput/helium fedora-45-x86_64
 dnf in -y @kde-desktop vlc gwenview helium-bin 
+
 #Clean Up
 dnf upgrade -y --refresh && dnf autoremove -y && dnf clean all
 
