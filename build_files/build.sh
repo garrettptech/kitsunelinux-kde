@@ -1,18 +1,13 @@
 #!/bin/bash
 set -oue pipefail
 
-# Desktop Environment and Applications
+app_pkgs=(
+    @kde-desktop 
+    vlc 
+    gwenview 
+    helium-bin 
+)
+
+# Install & Cleanup
 dnf copr enable -y imput/helium fedora-45-x86_64
-dnf in -y @kde-desktop vlc gwenview helium-bin 
-
-#Clean Up
-dnf upgrade -y --refresh && dnf autoremove -y && dnf clean all
-
-# Flatpaks
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install -y flathub it.mijorus.gearlever 
-flatpak install -y flathub com.ranfdev.DistroShelf
-
-#Service Perfs
-systemctl disable flatpak-add-fedora-repos.service
-systemctl mask systemd-remount-fs.service
+dnf install -y "${app_pkgs[@]}" && dnf upgrade -y --refresh && dnf autoremove -y && dnf clean all
