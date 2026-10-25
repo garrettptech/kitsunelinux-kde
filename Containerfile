@@ -1,7 +1,7 @@
 FROM scratch as ctx
 COPY build_files /
 
-FROM ghcr.io/garrettptech/kitsunelinux-base:latest-20261022
+FROM ghcr.io/garrettptech/kitsunelinux-base:latest
 
 COPY system_files /
 RUN rm -rf /var/run && ln -s /run /var/run
