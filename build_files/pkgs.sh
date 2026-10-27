@@ -3,6 +3,7 @@ set -oue pipefail
 
 app_pkgs=(
     @kde-desktop 
+    NetworkManager
     vlc 
     gwenview 
     helium-bin 

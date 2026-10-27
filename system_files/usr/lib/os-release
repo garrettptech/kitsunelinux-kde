@@ -12,5 +12,5 @@ CPE_NAME="cpe:/o:garrettptech:kitsunelinux-kde:45"
 DEFAULT_HOSTNAME="kitsunelinux"
 HOME_URL="https://github.com/garrettptech/kitsunelinux-kde"
 PLATFORM_ID="platform:f45"
-VARIANT="bootc"
+VARIANT="KDE Edition"
 VARIANT_ID=kitsunelinux
