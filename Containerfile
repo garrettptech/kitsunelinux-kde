@@ -2,7 +2,7 @@ FROM scratch as ctx
 COPY build_files /
 COPY system_files /system_files
 
-FROM localhost/kitsunelinux-base:latest
+FROM ghcr.io/garrettptech/kitsunelinux-base:latest
 
 #Runs Scripts
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
